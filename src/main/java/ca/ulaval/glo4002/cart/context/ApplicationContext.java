@@ -6,6 +6,8 @@ public class ApplicationContext {
     public static final String PROMO_PARAMETER = "promo";
     public static final String MODE_PARAMETER = "mode";
 
+    public static int PORT;
+
     public void apply() {
         if (hasParameterValue(STORE_PARAMETER, "xml")) {
             new XmlPersistenceContext().apply();

@@ -22,16 +22,12 @@ import org.glassfish.jersey.servlet.ServletContainer;
 public class CartServer implements Runnable {
     private static int PORT;
 
-    public CartServer(int PORT) {
-        this.PORT = PORT;
-    }
-
     public static void main(String[] args) {
-        int Dport = Integer.parseInt(args[0]);
-        new CartServer(Dport).run();
+        new CartServer().run();
     }
 
     public void run() {
+        PORT = Integer.parseInt(System.getProperty("port"));
         configureContext();
         startServer();
     }
